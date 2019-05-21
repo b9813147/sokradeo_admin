@@ -1,0 +1,53 @@
+// Fonts
+//@import url('https://fonts.googleapis.com/css?family=Nunito');
+// fortaesome
+@import "~@fortawesome/fontawesome-free/css/all.css";
+// Variables
+@import 'variables';
+
+// Bootstrap
+//@import '~bootstrap/scss/bootstrap';
+@import "~startbootstrap-sb-admin/scss/sb-admin.scss";
+// BootstrapVue
+//@import "~bootstrap-vue/dist/bootstrap-vue.css";
+//nprogress
+@import "~nprogress/nprogress.css";
+
+
+.navbar-laravel {
+    background-color : #fff;
+    box-shadow       : 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+
+header.sticky-header {
+    display          : flex;
+    position         : absolute;
+    right            : 0;
+    top              : 0;
+    width            : calc(100% - #{$sidebar-collapsed-width});
+    height           : $sticky-herder-height;
+    border-bottom    : 1px solid #d9dee4;
+    background-color : $gray-200;
+
+    .copyright {
+        line-height : 1;
+        font-size   : 0.8rem;
+    }
+
+    @media (min-width : 768px) {
+        width : calc(100% - #{$sidebar-base-width});
+    }
+}
+
+body.sidebar-toggled {
+    header.sticky-header {
+        width : 100%;
+    }
+
+    @media (min-width : 768px) {
+        header.sticky-header {
+            width : calc(100% - #{$sidebar-collapsed-width});
+        }
+    }
+}
