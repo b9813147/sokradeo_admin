@@ -12,7 +12,7 @@ class PersonnelController extends Controller
 
     public function index()
     {
-        return view('channel.index');
+        return view('personnel.index');
     }
     public function getAll()
     {

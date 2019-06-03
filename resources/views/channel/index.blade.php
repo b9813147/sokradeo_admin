@@ -7,8 +7,9 @@
         </li>
         <li class="breadcrumb-item active">頻道管理</li>
     </ol>
-    <member-component></member-component>
 
+        <member-component></member-component>
+@stop
     {{--<!-- Icon Cards-->--}}
     {{--<div class="row">--}}
     {{--<div class="col-xl-3 col-sm-6 mb-3">--}}
@@ -582,4 +583,4 @@
     {{--<div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>--}}
     {{--</div>--}}
 
-@stop
+

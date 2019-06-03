@@ -27,8 +27,6 @@
         <div class="container-fluid pt-5">
 
             @yield('content')
-
-
         </div>
         <!-- /.container-fluid -->
 
