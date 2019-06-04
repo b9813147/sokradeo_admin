@@ -16,7 +16,13 @@ class GroupUserRepository extends Repository
 
     public function getUser()
     {
-        $select = 'users.name as name, groups.name as group_name ,group_user.member_duty,group_user.member_status,groups.id as group_id,users.id as user_id,users.habook';
+        $select = 'users.name as name,
+                   groups.name as group_name,
+                   group_user.member_duty,
+                   group_user.member_status,
+                   groups.id as group_id,
+                   users.id as user_id,
+                   users.habook';
 
         return GroupUser::query()
             ->selectRaw($select)

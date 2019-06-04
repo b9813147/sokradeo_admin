@@ -14,7 +14,10 @@ class GroupUserService extends Service
     {
         $this->repository = $groupUserRepository;
     }
-
+    /**
+     * 取得頻道使用者
+     * @return GroupUserRepository[]|\Illuminate\Database\Eloquent\Collection|\Illuminate\Support\Collection
+     */
     public function getUser()
     {
         return $this->repository->getUser();
