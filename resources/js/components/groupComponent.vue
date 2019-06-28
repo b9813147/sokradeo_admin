@@ -21,21 +21,21 @@
 
         <!-- Main table element -->
         <b-table
-            show-empty
-            stacked="md"
-            :items="items"
-            :fields="fields"
-            :current-page="currentPage"
-            :per-page="perPage"
-            :filter="filter"
-            :sort-by.sync="sortBy"
-            :sort-desc.sync="sortDesc"
-            :sort-direction="sortDirection"
-            :striped="striped"
-            :bordered="bordered"
-            :hover="hover"
-            :small="small"
-            @filtered="onFiltered"
+                show-empty
+                stacked="md"
+                :items="items"
+                :fields="fields"
+                :current-page="currentPage"
+                :per-page="perPage"
+                :filter="filter"
+                :sort-by.sync="sortBy"
+                :sort-desc.sync="sortDesc"
+                :sort-direction="sortDirection"
+                :striped="striped"
+                :bordered="bordered"
+                :hover="hover"
+                :small="small"
+                @filtered="onFiltered"
         >
             <template slot="school_code" slot-scope="row">
                 {{ row.item.school_code }}
@@ -180,288 +180,289 @@
 </template>
 
 <script>
-    const items = [];
-    export default {
-        name   : "groupComponent",
-        data() {
-            return {
-                // modalShow: false,
-                storageUrl   : '/storage/group/',
-                items        : items,
-                fields       : [
-                    {
-                        key          : 'school_code',
-                        label        : '學校代碼',
-                        sortable     : true,
-                        sortDirection: 'desc'
-                    },
-                    {
-                        key          : 'name',
-                        label        : '群組名稱',
-                        sortable     : true,
-                        sortDirection: 'desc'
-                    },
-                    {
-                        key          : 'description',
-                        label        : '描述',
-                        sortable     : true,
-                        sortDirection: 'desc'
-                    },
-                    {
-                        key          : 'status',
-                        label        : '狀態',
-                        sortable     : true,
-                        sortDirection: 'desc'
-                    },
-                    {
-                        key          : 'public',
-                        label        : '公開',
-                        sortable     : true,
-                        sortDirection: 'desc'
-                    },
-                    {
-                        key          : 'thumbnail',
-                        label        : '縮圖',
-                        sortable     : true,
-                        sortDirection: 'desc'
-                    },
-                    {
-                        key  : 'actions',
-                        label: '操作'
-                    }
-                ],
-                status       : [
-                    {
-                        text : '啟用',
-                        value: 1
-                    }, {
-                        text : '停用',
-                        value: 0
-                    }
-                ],
-                public       : [
-                    {
-                        text : '啟用',
-                        value: 1
-                    }, {
-                        text : '停用',
-                        value: 0
-                    }
-                ],
-                currentPage  : 1,
-                perPage      : 10,
-                totalRows    : items.length,
-                pageOptions  : [10, 15, 25, 50, 100],
-                sortBy       : null,
-                sortDesc     : false,
-                sortDirection: 'asc',
-                filter       : null,
-                striped      : true,
-                bordered     : true,
-                small        : true,
-                hover        : true,
-                required     : true,
-                selectValue  : {
-                    school_code: '',
-                    name       : '',
-                    description: '',
-                    status     : '',
-                    public     : '',
-                    thumbnail  : null
-                },
-                state        : {
-                    school_code: null,
-                    name       : null,
-                    description: null,
-                    status     : null,
-                    public     : null,
-                },
-                url          : '',
-
-
-            }
+  const items = [];
+  export default {
+    name   : "groupComponent",
+    data() {
+      return {
+        // modalShow: false,
+        storageUrl   : '/storage/group/',
+        items        : items,
+        fields       : [
+          {
+            key          : 'school_code',
+            label        : '學校代碼',
+            sortable     : true,
+            sortDirection: 'desc'
+          },
+          {
+            key          : 'name',
+            label        : '群組名稱',
+            sortable     : true,
+            sortDirection: 'desc'
+          },
+          {
+            key          : 'description',
+            label        : '描述',
+            sortable     : true,
+            sortDirection: 'desc'
+          },
+          {
+            key          : 'status',
+            label        : '狀態',
+            sortable     : true,
+            sortDirection: 'desc'
+          },
+          {
+            key          : 'public',
+            label        : '公開',
+            sortable     : true,
+            sortDirection: 'desc'
+          },
+          {
+            key          : 'thumbnail',
+            label        : '縮圖',
+            sortable     : true,
+            sortDirection: 'desc'
+          },
+          {
+            key  : 'actions',
+            label: '操作'
+          }
+        ],
+        status       : [
+          {
+            text : '啟用',
+            value: 1
+          }, {
+            text : '停用',
+            value: 0
+          }
+        ],
+        public       : [
+          {
+            text : '啟用',
+            value: 1
+          }, {
+            text : '停用',
+            value: 0
+          }
+        ],
+        currentPage  : 1,
+        perPage      : 10,
+        totalRows    : 1,
+        pageOptions  : [10, 15, 25, 50, 100],
+        sortBy       : null,
+        sortDesc     : false,
+        sortDirection: 'asc',
+        filter       : null,
+        striped      : true,
+        bordered     : true,
+        small        : true,
+        hover        : true,
+        required     : true,
+        selectValue  : {
+          school_code: '',
+          name       : '',
+          description: '',
+          status     : '',
+          public     : '',
+          thumbnail  : null
         },
-        methods: {
-            init() {
-
-                this.getGroupList();
-
-                // location.reload();
-                this.selectValue = {
-                    school_code: '',
-                    name       : '',
-                    description: '',
-                    status     : '',
-                    public     : '',
-                    thumbnail  : ''
-                };
-                this.state = {
-                    school_code: null,
-                    name       : null,
-                    description: null,
-                    status     : null,
-                    public     : null,
-                };
-            },
-            imgSrc(d) {
-                let _this = this;
-                return `${_this.storageUrl}${d.id}/${d.thumbnail}`;
-
-            },
-
-            create() {
-                let _this = this;
-                _this.url = '/group';
-
-                _this.selectValue = {
-                    school_code: '',
-                    name       : '',
-                    description: '',
-                    status     : '',
-                    public     : '',
-                    thumbnail  : null
-                };
-                _this.state = {
-                    school_code: null,
-                    name       : null,
-                    description: null,
-                    status     : null,
-                    public     : null,
-                };
-            },
-
-            modify(data) {
-                let _this = this;
-                _this.selectValue = data;
-                // _this.url = `group/${_this.selectValue.id}`;
-                _this.url = `group/update/${_this.selectValue.id}`;
-                console.log(data);
-            },
-
-            handle(e) {
-                let _this = this;
-                // Prevent modal from closing
-                e.preventDefault();
-                if (!_this.selectValue.school_code) {
-                    _this.state.school_code = false;
-                }
-                if (!_this.selectValue.name) {
-                    _this.state.name = false;
-                }
-                if (!_this.selectValue.description) {
-                    _this.state.description = false;
-                }
-                if (!_this.selectValue.status) {
-                    _this.state.status = false;
-                }
-                if (!_this.selectValue.public) {
-                    _this.state.public = false;
-                }
-
-                if (_this.selectValue.school_code) {
-                    _this.state.school_code = true;
-                }
-                if (_this.selectValue.name) {
-                    _this.state.name = true
-                }
-                if (_this.selectValue.description) {
-                    _this.state.description = true
-                }
-                if (_this.selectValue.status) {
-                    _this.state.status = true
-                }
-                if (_this.selectValue.public) {
-                    _this.state.public = true
-                }
-
-                if (_this.state.school_code && _this.state.name && _this.state.description && _this.state.status && _this.state.public) {
-                    this.submit();
-                }
-
-            },
-
-            submit() {
-                let _this = this;
-                let formData = new FormData();
-                let config = {
-                    headers: {
-                        'content-Type': 'multipart/form-data'
-                    }
-                };
-                formData.append('thumbnail', _this.selectValue.thumbnail);
-                if (_this.url === 'group') {
-                    axios.post(_this.url, formData, {params: _this.selectValue,}, {config})
-                        .then((response) => {
-                            console.log(response);
-                            this.init();
-                            _this.$refs['create-modal'].hide();
-                            _this.$refs['edit-modal'].hide();
-                            // console.log(response.status);
-                            // console.log(_this.selectValue);
-                        })
-                        .catch((error) => {
-
-                        });
-                } else {
-                    axios.post(_this.url, formData, {params: _this.selectValue,}, {config})
-                        .then((response) => {
-                            console.log(response);
-                            this.init();
-                            _this.$refs['create-modal'].hide();
-                            _this.$refs['edit-modal'].hide();
-                        })
-                        .catch((error) => {
-
-                        });
-                }
-                //co
-                _this.$refs['create-modal'].hide();
-                _this.$refs['edit-modal'].hide();
-
-                this.init();
-
-
-            },
-
-            cancel() {
-                let _this = this;
-                _this.selectValue = {
-                    school_code: '',
-                    name       : '',
-                    description: '',
-                    status     : '',
-                    public     : '',
-                    thumbnail  : ''
-                };
-            },
-
-            onFiltered(filteredItems) {
-                // Trigger pagination to update the number of buttons/pages due to filtering
-                this.totalRows = filteredItems.length;
-                this.currentPage = 1
-            },
-
-            getGroupList() {
-                let _this = this;
-                let groupUrl = '/api/group';
-                axios.get(groupUrl)
-                    .then((response) => {
-                        _this.items = [];
-                        _this.items = response.data;
-                    })
-                    .catch((error) => {
-                        console.log(error);
-                    });
-            }
+        state        : {
+          school_code: null,
+          name       : null,
+          description: null,
+          status     : null,
+          public     : null,
         },
+        url          : '',
 
-        mounted() {
-            let _this = this;
-            this.totalRows = this.items.length;
-            _this.getGroupList();
 
-        },
-    }
+      }
+    },
+    methods: {
+      init() {
+
+        this.getGroupList();
+
+        // location.reload();
+        this.selectValue = {
+          school_code: '',
+          name       : '',
+          description: '',
+          status     : '',
+          public     : '',
+          thumbnail  : ''
+        };
+        this.state       = {
+          school_code: null,
+          name       : null,
+          description: null,
+          status     : null,
+          public     : null,
+        };
+      },
+      imgSrc(d) {
+        let _this = this;
+        return `${_this.storageUrl}${d.id}/${d.thumbnail}`;
+
+      },
+
+      create() {
+        let _this = this;
+        _this.url = '/group';
+
+        _this.selectValue = {
+          school_code: '',
+          name       : '',
+          description: '',
+          status     : '',
+          public     : '',
+          thumbnail  : null
+        };
+        _this.state       = {
+          school_code: null,
+          name       : null,
+          description: null,
+          status     : null,
+          public     : null,
+        };
+      },
+
+      modify(data) {
+        let _this         = this;
+        _this.selectValue = data;
+        // _this.url = `group/${_this.selectValue.id}`;
+        _this.url         = `group/update/${_this.selectValue.id}`;
+        console.log(data);
+      },
+
+      handle(e) {
+        let _this = this;
+        // Prevent modal from closing
+        e.preventDefault();
+        if (!_this.selectValue.school_code) {
+          _this.state.school_code = false;
+        }
+        if (!_this.selectValue.name) {
+          _this.state.name = false;
+        }
+        if (!_this.selectValue.description) {
+          _this.state.description = false;
+        }
+        if (!_this.selectValue.status) {
+          _this.state.status = false;
+        }
+        if (!_this.selectValue.public) {
+          _this.state.public = false;
+        }
+
+        if (_this.selectValue.school_code) {
+          _this.state.school_code = true;
+        }
+        if (_this.selectValue.name) {
+          _this.state.name = true
+        }
+        if (_this.selectValue.description) {
+          _this.state.description = true
+        }
+        if (_this.selectValue.status) {
+          _this.state.status = true
+        }
+        if (_this.selectValue.public) {
+          _this.state.public = true
+        }
+
+        if (_this.state.school_code && _this.state.name && _this.state.description && _this.state.status && _this.state.public) {
+          this.submit();
+        }
+
+      },
+
+      submit() {
+        let _this    = this;
+        let formData = new FormData();
+        let config   = {
+          headers: {
+            'content-Type': 'multipart/form-data'
+          }
+        };
+        formData.append('thumbnail', _this.selectValue.thumbnail);
+        if (_this.url === 'group') {
+          axios.post(_this.url, formData, {params: _this.selectValue,}, {config})
+            .then((response) => {
+              console.log(response);
+              this.init();
+              _this.$refs['create-modal'].hide();
+              _this.$refs['edit-modal'].hide();
+              // console.log(response.status);
+              // console.log(_this.selectValue);
+            })
+            .catch((error) => {
+
+            });
+        } else {
+          axios.post(_this.url, formData, {params: _this.selectValue,}, {config})
+            .then((response) => {
+              console.log(response);
+              this.init();
+              _this.$refs['create-modal'].hide();
+              _this.$refs['edit-modal'].hide();
+            })
+            .catch((error) => {
+
+            });
+        }
+
+        _this.$refs['create-modal'].hide();
+        _this.$refs['edit-modal'].hide();
+
+        this.init();
+
+
+      },
+
+      cancel() {
+        let _this         = this;
+        _this.selectValue = {
+          school_code: '',
+          name       : '',
+          description: '',
+          status     : '',
+          public     : '',
+          thumbnail  : ''
+        };
+      },
+
+      onFiltered(filteredItems) {
+        // Trigger pagination to update the number of buttons/pages due to filtering
+        let _this         = this;
+        _this.totalRows   = filteredItems.length;
+        _this.currentPage = 1
+      },
+
+      getGroupList() {
+        let _this    = this;
+        let groupUrl = '/api/group';
+        axios.get(groupUrl)
+          .then((response) => {
+            _this.items     = [];
+            _this.items     = response.data;
+            _this.totalRows = response.data.length;
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
+    },
+
+    mounted() {
+      let _this = this;
+      _this.getGroupList();
+
+    },
+  }
 </script>
 
 <style scoped>

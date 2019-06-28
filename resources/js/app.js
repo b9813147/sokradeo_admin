@@ -7,18 +7,19 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+import Vuex  from 'vuex';
+import store from './store/index';
 
 // import 'babel-polyfill';
 
 import 'nprogress/nprogress';
 
 
-
-
 import BootstrapVue from 'bootstrap-vue'
 
 Vue.use(BootstrapVue);
 
+Vue.use(Vuex);
 
 /**
  * The following block of code may be used to automatically register your
@@ -37,6 +38,7 @@ Vue.component('progress-component', require('./components/ProgressComponent.vue'
 Vue.component('image-component', require('./components/ImageComponent.vue').default);
 Vue.component('member-component', require('./components/memberComponent.vue').default);
 Vue.component('group-component', require('./components/groupComponent.vue').default);
+Vue.component('user-component', require('./components/UserComponent').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -44,5 +46,8 @@ Vue.component('group-component', require('./components/groupComponent.vue').defa
  */
 
 const app = new Vue({
-    el: '#wrapper'
+
+  store,
+
+  el: '#wrapper'
 });

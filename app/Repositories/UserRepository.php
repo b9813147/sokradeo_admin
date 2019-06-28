@@ -4,6 +4,9 @@ namespace App\Repositories;
 
 use App\Models\User;
 use App\Types\Auth\AccountType;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Model;
 use LogicException;
 use Yish\Generators\Foundation\Repository\Repository;
 
@@ -19,7 +22,8 @@ class UserRepository extends Repository
     /**
      * @param $userId
      *
-     * @return User|User[]|\Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Eloquent\Builder[]|\Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Model
+     *
+     * @return User|User[]|Builder|Builder[]|Collection|Model
      */
     public function getUser($userId)
     {
@@ -30,7 +34,7 @@ class UserRepository extends Repository
      * @param $AccType
      * @param $accId
      *
-     * @return User|User[]|\Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Eloquent\Builder[]|\Illuminate\Database\Eloquent\Collection|\Illuminate\Database\Eloquent\Model
+     * @return User|User[]|Builder|Builder[]|Collection|Model
      */
     public function getUserByAcc($AccType, $accId)
     {
@@ -101,6 +105,52 @@ class UserRepository extends Repository
         }
 
         return User::query()->select('id', 'name')->where('name', 'like', $name . '%')->get();
+    }
+
+    /**
+     * @param int  $perPage
+     * @param null $search
+     * @return array
+     */
+    public function getUserAndPaginate($perPage = Null, $search = Null)
+    {
+
+        $data = User::query()->where(function ($q) use ($search) {
+            if ($search) {
+                $q->where('habook', 'like binary', '%' . $search . '%')
+                    ->orWhere('client_id', 'like binary', '%' . $search . '%')
+                    ->orWhere('client_user', 'like binary', '%' . $search . '%')
+                    ->orWhere('email', 'like binary', '%' . $search . '%');
+            }
+        })->paginate($perPage);
+
+
+        $response = [
+            'data'     => $data,
+            'paginate' => [
+                'total'        => $data->total(),
+                'per_page'     => $data->perPage(),
+                'current_page' => $data->currentPage(),
+                'last_page'    => $data->lastPage(),
+                'from'         => $data->firstItem(),
+                'to'           => $data->lastItem(),
+            ]
+        ];
+        return $response;
+    }
+
+    public function search($search)
+    {
+        $data = User::query()->where(function ($q) use ($search) {
+            if ($search) {
+                $q->where('habook', 'like binary', '%' . $search . '%')
+                    ->orWhere('client_id', 'like binary', '%' . $search . '%')
+                    ->orWhere('client_user', 'like binary', '%' . $search . '%')
+                    ->orWhere('email', 'like binary', '%' . $search . '%');
+            }
+        })->get();
+
+        return $data;
     }
 
 }

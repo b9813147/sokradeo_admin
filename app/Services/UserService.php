@@ -13,4 +13,14 @@ class UserService extends Service
     {
         $this->repository = $userRepository;
     }
+
+    /**
+     * @param $perPage
+     * @param $search
+     * @return array
+     */
+    public function getUserAndPaginate($perPage, $search)
+    {
+        return $this->repository->getUserAndPaginate($perPage, $search);
+    }
 }
