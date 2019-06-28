@@ -38,7 +38,7 @@ Vue.component('progress-component', require('./components/app/ProgressComponent.
 Vue.component('image-component', require('./components/ImageComponent.vue').default);
 Vue.component('group-member-component', require('./components/group/groupMemberComponent.vue').default);
 Vue.component('group-component', require('./components/group/groupComponent.vue').default);
-Vue.component('user-component', require('./components/UserComponent').default);
+Vue.component('member-component', require('./components/presonnel/MemberComponent.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

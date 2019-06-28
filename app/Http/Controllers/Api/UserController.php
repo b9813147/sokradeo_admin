@@ -24,9 +24,10 @@ class UserController extends Controller
     public function getUserAll(Request $request)
     {
 
-        $perPage = $request->per_page;
-        $search = $request->search;
-        return $this->userService->getUserAndPaginate($perPage,$search);
+//        $perPage = $request->per_page;
+//        $search = $request->search;
+//        return $this->userService->getUserAndPaginate($perPage,$search);
+        return $this->userService->getUserAll();
 
     }
 }

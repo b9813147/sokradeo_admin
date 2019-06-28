@@ -23,4 +23,9 @@ class UserService extends Service
     {
         return $this->repository->getUserAndPaginate($perPage, $search);
     }
+
+    public function getUserAll()
+    {
+        return $this->repository->all();
+    }
 }

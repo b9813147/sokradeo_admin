@@ -11,6 +11,9 @@
 |
 */
 
+Route::get('test', function () {
+    return 't';
+});
 
 Route::get('/member', function () {
     return view('group.member');

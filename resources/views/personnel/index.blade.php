@@ -20,8 +20,8 @@
     {{--    </section>--}}
 {{--<test-component></test-component>--}}
 
-<user-component></user-component>
-
+{{--<user-component></user-component>--}}
+<member-component></member-component>
 
 
 
