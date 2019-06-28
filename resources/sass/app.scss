@@ -54,7 +54,8 @@ body.sidebar-toggled {
 // Custom Dropdown
 ul {
   .dropdown-menu {
-    background-color: transparent;
+    background-color: $navbar-background-color;
+    //background-color: transparent;
     border: none;
   }
 
@@ -63,7 +64,7 @@ ul {
 
     &:hover {
       color: rgba(255, 255, 255, 0.75);
-      background-color: rgba(255, 255, 255, 0.1);;
+      background-color: rgba(255, 255, 255, 0.1);
     }
 
     &:focus {
@@ -82,3 +83,25 @@ ul {
 footer.sticky-footer{
   height: 40px;
 }
+//Custom Width
+//.wd-60{
+//  width: 60px;
+//}
+//.wd-70{
+//  width: 70px;
+//}
+//.wd-80{
+//  width: 80px;
+//}
+//.wd-100{
+//  width: 100px;
+//}
+//.wd-120{
+//  width: 120px;
+//}
+//.wd-140{
+//  width: 140px;
+//}
+//.wd-160{
+//  width: 160px;
+//}

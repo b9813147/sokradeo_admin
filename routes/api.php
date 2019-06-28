@@ -20,3 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('group', 'Api\GroupController@getGroupAll');
 Route::get('group/user', 'Api\GroupController@getGroupUserAll');
 Route::get('group/user/exist', 'Api\GroupController@getMemberGroupExist');
+Route::get('users', 'Api\UserController@getUserAll');

@@ -33,11 +33,11 @@ Vue.use(Vuex);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('progress-component', require('./components/ProgressComponent.vue').default);
+Vue.component('progress-component', require('./components/app/ProgressComponent.vue').default);
 
 Vue.component('image-component', require('./components/ImageComponent.vue').default);
-Vue.component('member-component', require('./components/memberComponent.vue').default);
-Vue.component('group-component', require('./components/groupComponent.vue').default);
+Vue.component('group-member-component', require('./components/group/groupMemberComponent.vue').default);
+Vue.component('group-component', require('./components/group/groupComponent.vue').default);
 Vue.component('user-component', require('./components/UserComponent').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to

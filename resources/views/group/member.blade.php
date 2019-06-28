@@ -7,5 +7,5 @@
         <li class="breadcrumb-item active">人員列表</li>
     </ol>
 
-    <member-component></member-component>
+    <group-member-component></group-member-component>
 @stop
