@@ -635,10 +635,10 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@fortawesome/fontawesome-free@5.7.0":
-  version "5.7.0"
-  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.7.0.tgz#d28fd6248837ae5142c567f7ff50605824207e34"
-  integrity sha512-jLikKhTPgYTY/IFIBwkPSh2JME5xK0b9DqXmTdlG/SUbMW0siHIJ+GLPTebL8qHO5R6xOth0uPHBL5/oZ7BeEQ==
+"@fortawesome/fontawesome-free@5.9.0":
+  version "5.9.0"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.9.0.tgz#1aa5c59efb1b8c6eb6277d1e3e8c8f31998b8c8e"
+  integrity sha512-g795BBEzM/Hq2SYNPm/NQTIp3IWd4eXSH0ds87Na2jnrAUFX3wkyZAI4Gwj9DOaWMuz2/01i8oWI7P7T/XLkhg==
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
@@ -1090,13 +1090,12 @@ autoprefixer@^9.4.2:
     postcss "^7.0.14"
     postcss-value-parser "^3.3.1"
 
-axios@^0.18:
-  version "0.18.0"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.18.0.tgz#32d53e4851efdc0a11993b6cd000789d70c05102"
-  integrity sha1-MtU+SFHv3AoRmTts0AB4nXDAUQI=
+axios@^0.19.0:
+  version "0.19.2"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.19.2.tgz#3ea36c5d8818d0d5f8a8a97a6d36b86cdc00cb27"
+  integrity sha512-fjgm5MvRHLhx+osE2xoekY70AhARk3a6hkN+3Io1jc00jtquGvxYlKlsFUhmUET0V5te6CcZI7lcv2Ym61mjHA==
   dependencies:
-    follow-redirects "^1.3.0"
-    is-buffer "^1.1.5"
+    follow-redirects "1.5.10"
 
 babel-code-frame@^6.26.0:
   version "6.26.0"
@@ -1236,12 +1235,7 @@ bootstrap-vue@^2.0.0-rc.19:
     portal-vue "^2.1.1"
     vue-functional-data-merge "^2.0.7"
 
-bootstrap@4.2.1:
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.2.1.tgz#8f8bdca024dbf0e8644da32e918c8a03a90a5757"
-  integrity sha512-tt/7vIv3Gm2mnd/WeDx36nfGGHleil0Wg8IeB7eMrVkY0fZ5iTaBisSh8oNANc2IBsCc6vCgCNTIM/IEN0+50Q==
-
-bootstrap@^4.3.1:
+bootstrap@4.3.1, bootstrap@^4.3.1:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.3.1.tgz#280ca8f610504d99d7b6b4bfc4b68cec601704ac"
   integrity sha512-rXqOmH1VilAt2DyPzluTi2blhk17bO7ef+zLLPlWvG494pDxcM234pJ8wTc/6R40UWizAIIMgxjvxZg5kmsbag==
@@ -1499,10 +1493,10 @@ charenc@~0.0.1:
   resolved "https://registry.yarnpkg.com/charenc/-/charenc-0.0.2.tgz#c0a1d2f3a7092e03774bfa83f14c0fc5790a8667"
   integrity sha1-wKHS86cJLgN3S/qD8UwPxXkKhmc=
 
-chart.js@2.7.3:
-  version "2.7.3"
-  resolved "https://registry.yarnpkg.com/chart.js/-/chart.js-2.7.3.tgz#cdb61618830bf216dc887e2f7b1b3c228b73c57e"
-  integrity sha512-3+7k/DbR92m6BsMUYP6M0dMsMVZpMnwkUyNSAbqolHKsbIzH2Q4LWVEHHYq7v0fmEV8whXE0DrjANulw9j2K5g==
+chart.js@2.8.0:
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/chart.js/-/chart.js-2.8.0.tgz#b703b10d0f4ec5079eaefdcd6ca32dc8f826e0e9"
+  integrity sha512-Di3wUL4BFvqI5FB5K26aQ+hvWh8wnP9A3DWGvXHVkO13D3DSnaSsdZx29cXlEsYKVkn1E2az+ZYFS4t0zi8x0w==
   dependencies:
     chartjs-color "^2.1.0"
     moment "^2.10.2"
@@ -2147,6 +2141,13 @@ debug@2.6.9, debug@^2.2.0, debug@^2.3.3:
   dependencies:
     ms "2.0.0"
 
+debug@=3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
+  integrity sha512-OX8XqP7/1a9cqkxYw2yXss15f26NKWBpDXQd0/uK/KPqdQhxbPa994hnzjcE2VqQpDslf55723cKPUOGSmMY3g==
+  dependencies:
+    ms "2.0.0"
+
 debug@^3.2.5, debug@^3.2.6:
   version "3.2.6"
   resolved "https://registry.yarnpkg.com/debug/-/debug-3.2.6.tgz#e83d17de16d8a7efb7717edbe5fb10135eee629b"
@@ -2693,9 +2694,9 @@ faye-websocket@~0.11.1:
     websocket-driver ">=0.5.1"
 
 figgy-pudding@^3.5.1:
-  version "3.5.1"
-  resolved "https://registry.yarnpkg.com/figgy-pudding/-/figgy-pudding-3.5.1.tgz#862470112901c727a0e495a80744bd5baa1d6790"
-  integrity sha512-vNKxJHTEKNThjfrdJwHc7brvM6eVevuO5nTj6ez8ZQ1qbXTvGthucRF7S4vf2cr71QVnT70V34v0S1DyQsti0w==
+  version "3.5.2"
+  resolved "https://registry.yarnpkg.com/figgy-pudding/-/figgy-pudding-3.5.2.tgz#b4eee8148abb01dcf1d1ac34367d59e12fa61d6e"
+  integrity sha512-0btnI/H8f2pavGMN8w40mlSKOfTK2SVJmBfBeVIj3kNw0swwgzyRq0d5TJVOwodFmtvpPeWPN/MCcfuWF0Ezbw==
 
 file-loader@^2.0.0:
   version "2.0.0"
@@ -2767,7 +2768,14 @@ flush-write-stream@^1.0.0:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
 
-follow-redirects@^1.0.0, follow-redirects@^1.3.0:
+follow-redirects@1.5.10:
+  version "1.5.10"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.5.10.tgz#7b7a9f9aea2fdff36786a94ff643ed07f4ff5e2a"
+  integrity sha512-0V5l4Cizzvqt5D44aTXbFZz+FtyXV1vrDN6qrelxtfYQKW0KO0W2T/hkE8xvGa/540LkZlkaUjO4ailYTFtHVQ==
+  dependencies:
+    debug "=3.1.0"
+
+follow-redirects@^1.0.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.7.0.tgz#489ebc198dc0e7f64167bd23b03c4c19b5784c76"
   integrity sha512-m/pZQy4Gj287eNy94nivy5wchN3Kp+Q5WgUPNy5lJSZ3sgkVKSYV/ZChMAQVIgx1SqfZ2zBZtPA2YlXIWxxJOQ==
@@ -3625,12 +3633,7 @@ jquery.easing@^1.4.1:
   resolved "https://registry.yarnpkg.com/jquery.easing/-/jquery.easing-1.4.1.tgz#47982c5836bd758fd48494923c4a101ef6e93e3b"
   integrity sha1-R5gsWDa9dY/UhJSSPEoQHvbpPjs=
 
-jquery@3.3.1:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
-  integrity sha512-Ubldcmxp5np52/ENotGxlLe6aGMvmF4R8S6tZjsP6Knsaxd/xp3Zrh50cG93lR6nPXyUFwzN3ZSOQI0wRJNdGg==
-
-jquery@>=1.7, jquery@^3.2:
+jquery@3.4.1, jquery@>=1.7, jquery@^3.2:
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.4.1.tgz#714f1f8d9dde4bdfa55764ba37ef214630d80ef2"
   integrity sha512-36+AdBzCL+y6qjw5Tx7HgzeGCzC81MDDgaUP8ld2zhx58HdqXGoBd+tHdrBMiyjGQs0Hxs/MLZTu/eHNJJuWPw==
@@ -5914,9 +5917,9 @@ sprintf-js@~1.0.2:
   integrity sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
 
 ssri@^6.0.1:
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/ssri/-/ssri-6.0.1.tgz#2a3c41b28dd45b62b63676ecb74001265ae9edd8"
-  integrity sha512-3Wge10hNcT1Kur4PDFwEieXSCMCJs/7WvSACcrMYrNp+b8kDL1/0wJch5Ni2WrtwEa2IO8OsVfeKIciKCDx/QA==
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/ssri/-/ssri-6.0.2.tgz#157939134f20464e7301ddba3e90ffa8f7728ac5"
+  integrity sha512-cepbSq/neFK7xB6A50KHN0xHDotYzq58wWCa5LeWqnPrHG8GzfEjO/4O8kpmcGW+oaxkvhEJCWgbgNk4/ZV93Q==
   dependencies:
     figgy-pudding "^3.5.1"
 
@@ -5930,16 +5933,16 @@ stackframe@^1.0.4:
   resolved "https://registry.yarnpkg.com/stackframe/-/stackframe-1.0.4.tgz#357b24a992f9427cba6b545d96a14ed2cbca187b"
   integrity sha512-to7oADIniaYwS3MhtCa/sQhrxidCCQiF/qp4/m5iN3ipf0Y7Xlri0f6eG29r08aL7JYl8n32AF3Q5GYBZ7K8vw==
 
-startbootstrap-sb-admin@^5.0.3:
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/startbootstrap-sb-admin/-/startbootstrap-sb-admin-5.0.3.tgz#7f1e33386562297f88d68085095f461512aeb161"
-  integrity sha512-0C2lVBcSrdqdZ2JmYtAeJachbooCarqq7dGUewzrLJy5JXFdNf2Cw4NExi2METoj0huNyP8Ag3vZ8ajV7Zrk6g==
+startbootstrap-sb-admin@^5.1.0:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/startbootstrap-sb-admin/-/startbootstrap-sb-admin-5.1.1.tgz#491a7713daa564ebb8364b40e97695b6b46614b1"
+  integrity sha512-ugGlgxmJaWorgxNrG9s+cjU/uO+oF4Wk9IZBumuivQfzvzjG7eN4+mFg674g1MZnb0cxi6w8VD6IhrTNoEestw==
   dependencies:
-    "@fortawesome/fontawesome-free" "5.7.0"
-    bootstrap "4.2.1"
-    chart.js "2.7.3"
+    "@fortawesome/fontawesome-free" "5.9.0"
+    bootstrap "4.3.1"
+    chart.js "2.8.0"
     datatables.net-bs4 "1.10.19"
-    jquery "3.3.1"
+    jquery "3.4.1"
     jquery.easing "^1.4.1"
 
 static-extend@^0.1.1:
@@ -6448,6 +6451,13 @@ vue-loader@^15.4.2:
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
+vue-plain-pagination@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/vue-plain-pagination/-/vue-plain-pagination-0.3.0.tgz#f2f03550d2090508f9f6e18fba41930b25464c1e"
+  integrity sha512-zyzmRdrnG0qYCy31CqZ+TN+6WQAQSoGjvb/UZqtR69IG/4wAaU2r9UJjOTahnKcYdyuAz3WYcTRQxPFH2R7imQ==
+  dependencies:
+    vue "^2.5.17"
+
 vue-style-loader@^4.1.0:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/vue-style-loader/-/vue-style-loader-4.1.2.tgz#dedf349806f25ceb4e64f3ad7c0a44fba735fcf8"
@@ -6469,10 +6479,20 @@ vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
 
+vue@^2.5.17:
+  version "2.6.12"
+  resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.12.tgz#f5ebd4fa6bd2869403e29a896aed4904456c9123"
+  integrity sha512-uhmLFETqPPNyuLLbsKz6ioJ4q7AZHzD8ZVFNATNyICSZouqP2Sz0rotWQC8UNBF6VGSCs5abnKJoStA6JbCbfg==
+
 vue@^2.6.10:
   version "2.6.10"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.10.tgz#a72b1a42a4d82a721ea438d1b6bf55e66195c637"
   integrity sha512-ImThpeNU9HbdZL3utgMCq0oiMzAkt1mcgy3/E6zWC/G6AaQoeuFdsl9nDhTDU3X1R6FK7nsIUuRACVcjI+A2GQ==
+
+vuex@^3.1.1:
+  version "3.6.2"
+  resolved "https://registry.yarnpkg.com/vuex/-/vuex-3.6.2.tgz#236bc086a870c3ae79946f107f16de59d5895e71"
+  integrity sha512-ETW44IqCgBpVomy520DT5jf8n0zoCac+sxWnn+hMe/CzaSejb/eVw2YToiXYX+Ex/AuHHia28vWTq4goAexFbw==
 
 watchpack@^1.5.0:
   version "1.6.0"
